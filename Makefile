@@ -12,6 +12,9 @@ i2c8bit.o: i2c8bit.cpp i2c8bit.h
 alsasinejoy.exe: alsasinejoy.cpp
 	g++ -std=c++0x alsasinejoy.cpp -lasound -o alsasinejoy.exe INIReader.o ini.o
 
+joystick.exe: joystick.c
+	cc joystick.c -o joystick.exe
+
 #alsasinejoy.c: phonytarget
 #	wget -r https://dl.dropbox.com/u/46715231/alsasinejoy.c
 
