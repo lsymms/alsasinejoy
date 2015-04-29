@@ -393,23 +393,22 @@ void joystick_thread() {
 
   while (joystick_initialized == 0)
   {   
-    printf("reading joystick state\n");
     /* read the joystick state */
     read(joy_fd, &js, sizeof(struct js_event));
     
     if ((js.type & ~JS_EVENT_INIT) == JS_EVENT_AXIS && js.number == c_freq_axis) {
-      printf("reading value for freq axis value %d\n", js.value);
+//      printf("reading value for freq axis value %d\n", js.value);
       initial_freq_axis_val = freq_axis_val = js.value;     
       freq_initialized = true;
     }
     if ((js.type & ~JS_EVENT_INIT) == JS_EVENT_AXIS && js.number == c_pulse_axis) {
-      printf("reading value for pulse axis value %d\n", js.value);
+//      printf("reading value for pulse axis value %d\n", js.value);
       initial_pulse_axis_val = pulse_axis_val = js.value;
       pulse_initialized = true;
     }
     
     if (freq_initialized && pulse_initialized) {
-      printf("all initial values read from joystick\n");
+//      printf("all initial values read from joystick\n");
       joystick_initialized = 1;
     }
   }
