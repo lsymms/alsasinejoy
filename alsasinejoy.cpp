@@ -44,16 +44,16 @@ int latency = 100000; // .1 sec in us
 int buffer_size = 64;
 int freq_step = 2;  
 // initial frequency  
-int center_freq = 2000;
+int center_freq = 7900;
 /* factor of 65534 which determines freq range 
   	(e.g. range 4 means a freq range of 16383 Hz) */
-float range = 8;
+float range = 4;
 int range_min = 1;
 int range_max = 256;
 int disp_live_values = true;
 
 //initial volume (0-100)
-float initial_vol = 85;
+float initial_vol = 30;
 //number to divide the vol_axis_val by to get the volume
 float calc_vol_multiplier() { return 1/(( 65534/((100-initial_vol) /100) ) / 100); }
 float vol_multiplier = calc_vol_multiplier();
