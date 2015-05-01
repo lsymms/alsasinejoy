@@ -376,7 +376,7 @@ static void initialize_alsa(char *snd_dev) {
 	  exit(EXIT_FAILURE);
 	}
 	initializeMixer();
-	setAlsaMasterVolume(initial_vol);
+	setAlsaMasterVolume(100);
 	printf("finished initializing alsa\n");
 }	    
 
